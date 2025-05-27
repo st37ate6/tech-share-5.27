@@ -1,0 +1,17 @@
+{
+  "name": "typescript-go-performance-comparison",
+  "version": "1.0.0",
+  "description": "Performance comparison between TypeScript and Go for compiler-like operations",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "node dist/typescript-test.js",
+    "compare": "npm run build && npm run test && go run *.go",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^18.0.0"
+  },
+  "dependencies": {}
+}
