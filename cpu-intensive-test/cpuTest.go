@@ -42,7 +42,7 @@ func main() {
 	
 	const (
 		rangeStart = 1
-		rangeEnd   = 25000000 // 一百万
+		rangeEnd   = 50000000 // 一百万
 		numWorkers = 10      // 使用10个goroutine并行计算
 	)
 	

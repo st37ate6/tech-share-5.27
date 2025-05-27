@@ -27,7 +27,7 @@ function runTest() {
   console.time('TypeScript CPU Test');
   
   const RANGE_START = 1;
-  const RANGE_END = 10000000;  // 一百万
+  const RANGE_END = 50000000;  // 一百万
   
   const primes = findPrimesInRange(RANGE_START, RANGE_END);
   console.log(`Found ${primes.length} prime numbers`);

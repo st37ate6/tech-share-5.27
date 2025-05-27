@@ -574,7 +574,7 @@ func (p *Program) processFilesConcurrent(files []*SourceFile) {
             defer wg.Done()
             semaphore <- struct{}{}
             defer func() { <-semaphore }()
-          
+        
             // 在不同 CPU 核心上同时执行
             p.processFile(f)
         }(file)
@@ -618,7 +618,7 @@ func (p *Program) processWithSharedContext(files []*SourceFile) {
             symbols := ctx.SymbolTable
             types := ctx.TypeCache
             ctx.mu.RUnlock()
-          
+        
             processFile(f, symbols, types)
         }(file)
     }
@@ -634,14 +634,14 @@ function processWithWorkers(files) {
     return Promise.all(chunks.map(chunk => {
         return new Promise(resolve => {
             const worker = new Worker('processor.js');
-          
+        
             // 必须序列化整个数据 - 巨大开销！
             worker.postMessage({
                 files: chunk,
                 symbolTable: globalSymbolTable,  // 整个符号表都要传输
                 typeCache: globalTypeCache       // 整个类型缓存都要传输
             });
-          
+        
             worker.onmessage = (e) => {
                 resolve(e.data.results);
             };
