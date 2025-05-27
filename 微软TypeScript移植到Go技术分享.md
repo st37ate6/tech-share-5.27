@@ -1236,22 +1236,11 @@ func (c *Checker) checkSourceFiles(files []*SourceFile) {
 
 ## 实验代码仓库
 
+[仓库地址](https://github.com/st37ate6/tech-share-5.27)
+
 所有实验代码都在以下文件夹中：
 
 - `cpu-intensive-test/` - CPU 密集型任务测试
 - `type-checking-test/` - 类型检查系统比较
 - `memory-test/` - 内存管理效率测试
 - `performance-comparison/` - 大规模性能测试
-
-**演示命令**：
-
-```bash
-# CPU 密集型测试
-cd cpu-intensive-test && ./run-all.sh
-
-# 内存管理测试
-cd memory-test && ./run-memory-tests.sh
-
-# 大规模性能测试
-cd performance-comparison && ./run-large-scale.sh
-```
